@@ -1,0 +1,138 @@
+<database>
+    <typeOfGames>
+        <typeOfGame>
+            <Type>Chess</Type>
+        </typeOfGame>
+
+
+        <typeOfGame>
+            <Type>Football</Type>
+        </typeOfGame>
+
+
+        <typeOfGame>
+            <Type>Basketball</Type>
+        </typeOfGame>
+
+    </typeOfGames>
+    <tournaments>
+        <tournament>
+            <Name>Championship</Name>
+            <Location>Lviv</Location>
+            <Description>Good tournament</Description>
+            <Year>2015</Year>
+        </tournament>
+
+        <tournament>
+            <Name>Olympic Games</Name>
+            <Location>Oslo</Location>
+            <Description>Good tournament</Description>
+            <Year>2010</Year>
+        </tournament>
+
+        <tournament>
+            <Name>International Games</Name>
+            <Location>London</Location>
+            <Description>Good tournament</Description>
+            <Year>2016</Year>
+        </tournament>
+
+    </tournaments>
+    <players>
+
+        <player>
+            <Name>Andrii</Name>
+            <DateOfBirth>1997.09.04</DateOfBirth>
+        </player>
+        <player>
+            <Name>Ivan</Name>
+            <DateOfBirth>1992.09.04</DateOfBirth>
+        </player>
+        <player>
+            <Name>Ann</Name>
+            <DateOfBirth>1994.03.06</DateOfBirth>
+        </player>
+        <player>
+            <Name>Sasha</Name>
+            <DateOfBirth>1990.07.04</DateOfBirth>
+        </player>
+        <player>
+            <Name>Roman</Name>
+            <DateOfBirth>1999.11.01</DateOfBirth>
+        </player>
+        <player>
+            <Name>Boris</Name>
+            <DateOfBirth>1995.02.03</DateOfBirth>
+        </player>
+
+
+    </players>
+    <competitions>
+
+        <competition>
+            <Player_idPlayer1>Andrii</Player_idPlayer1>
+            <Player_idPlayer2>Ivan</Player_idPlayer2>
+            <Player_idWinner>Andrii</Player_idWinner>
+            <Duration>354</Duration>
+            <Date>2015.12.22</Date>
+            <TypeOfGame_idTypeOfGame>Chess</TypeOfGame_idTypeOfGame>
+            <Tournament_idTournament>International Games</Tournament_idTournament>
+        </competition>
+        <competition>
+            <Player_idPlayer1>Ivan</Player_idPlayer1>
+            <Player_idPlayer2>Andrii</Player_idPlayer2>
+            <Player_idWinner>Andrii</Player_idWinner>
+            <Duration>23254</Duration>
+            <Date>2015.10.22</Date>
+            <TypeOfGame_idTypeOfGame>Football</TypeOfGame_idTypeOfGame>
+            <Tournament_idTournament>Olympic Games</Tournament_idTournament>
+        </competition>
+        <competition>
+            <Player_idPlayer1>Ivan</Player_idPlayer1>
+            <Player_idPlayer2>Sasha</Player_idPlayer2>
+            <Player_idWinner>Sasha</Player_idWinner>
+            <Duration>100</Duration>
+            <Date>2016.10.22</Date>
+            <TypeOfGame_idTypeOfGame>Chess</TypeOfGame_idTypeOfGame>
+            <Tournament_idTournament>Olympic Games</Tournament_idTournament>
+        </competition>
+        <competition>
+            <Player_idPlayer1>Boris</Player_idPlayer1>
+            <Player_idPlayer2>Ann</Player_idPlayer2>
+            <Player_idWinner>Boris</Player_idWinner>
+            <Duration>324</Duration>
+            <Date>2016.03.12</Date>
+            <TypeOfGame_idTypeOfGame>Chess</TypeOfGame_idTypeOfGame>
+            <Tournament_idTournament>International Games</Tournament_idTournament>
+        </competition>
+        <competition>
+            <Player_idPlayer1>Roman</Player_idPlayer1>
+            <Player_idPlayer2>Boris</Player_idPlayer2>
+            <Player_idWinner>Roman</Player_idWinner>
+            <Duration>2324</Duration>
+            <Date>2015.03.12</Date>
+            <TypeOfGame_idTypeOfGame>Football</TypeOfGame_idTypeOfGame>
+            <Tournament_idTournament>Championship</Tournament_idTournament>
+        </competition>
+        <competition>
+            <Player_idPlayer1>Ann</Player_idPlayer1>
+            <Player_idPlayer2>Andrii</Player_idPlayer2>
+            <Player_idWinner>Ann</Player_idWinner>
+            <Duration>24</Duration>
+            <Date>2015.10.22</Date>
+            <TypeOfGame_idTypeOfGame>Chess</TypeOfGame_idTypeOfGame>
+            <Tournament_idTournament>Olympic Games</Tournament_idTournament>
+        </competition>
+        <competition>
+            <Player_idPlayer1>Boris</Player_idPlayer1>
+            <Player_idPlayer2>Ivan</Player_idPlayer2>
+            <Player_idWinner>Boris</Player_idWinner>
+            <Duration>35094</Duration>
+            <Date>2016.05.22</Date>
+            <TypeOfGame_idTypeOfGame>Basketball</TypeOfGame_idTypeOfGame>
+            <Tournament_idTournament>International Games</Tournament_idTournament>
+        </competition>
+
+    </competitions>
+
+</database>

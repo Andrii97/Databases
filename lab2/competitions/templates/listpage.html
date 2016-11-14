@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>List page</title>
+     {% load staticfiles %}
+    <link href="{% static 'semantic/semantic.min.css'%}" rel="stylesheet" type="text/css">
+    <script src="{% static 'semantic/semantic.min.js'%}"></script>
+</head>
+<body>
+
+
+
+<div class="ui raised very padded text container segment">
+  <h2 class="ui header center aligned "><i class="setting icon"></i> Competitions admin panel page</h2>
+</div>
+<br>
+<!--div class="ui grid stackable centered ">
+    <div class="row">
+
+        <div class="ui center aligned secondary segment three wide column">
+            <h3>Search tournament by year</h3>
+            <form class="ui form" method="get">
+                <div class="field">
+                    <label>From Year</label>
+                    <input type="number" name="fromYear" placeholder="From">
+                </div>
+                <div class="field">
+                    <label>To Year</label>
+                    <input type="number" name="toYear" placeholder="To">
+                </div>
+                <button class="ui green button" type="submit">Filter</button>
+            </form>
+
+        </div>
+        <div class="ui center aligned  one wide column"></div>
+
+        <div class="ui center aligned secondary segment three wide column">
+            <h3>Search by location name</h3>
+            <form class="ui form " method="get">
+                        <div class="field">
+                            <label>Location</label>
+                            <select  class="ui dropdown" name="locationName">
+                                <option>London</option>
+                                <option>Kiev</option>
+                                <option>Oslo</option>
+                                <option>Lviv</option>
+                            </select>
+                            <br>
+                            <button class="ui green button" type="submit">Filter</button>
+                        </div>
+            </form>
+        </div>
+        <div class="ui center aligned  one wide column"></div>
+        <div class="ui center aligned secondary segment three wide column">
+            <h3>Include certain word</h3>
+            <form class="ui form" method="get">
+                <div class="field">
+                    <label>Word</label>
+                    <input type="text" name="excludeWord" placeholder="Word">
+                </div>
+                <button class="ui green button" type="submit">Filter</button>
+            </form>
+        </div>
+        <div class="ui center aligned  one wide column"></div>
+        <div class="ui center aligned secondary segment three wide column">
+            <h3>Contains string</h3>
+            <form class="ui form" method="get">
+                <div class="field">
+                    <label>String</label>
+                    <input type="text" name="containsString" placeholder="String">
+                </div>
+                <button class="ui green button" type="submit">Filter</button>
+            </form>
+        </div>
+    </div-->
+
+
+
+</div>
+<br>
+<table class="ui celled striped padded table">
+  <thead>
+    <tr>
+        <!--th>Id competition</th-->
+        <th>Player1</th>
+        <th>Player2</th>
+        <th>Win player</th>
+        <th>Duration</th>
+        <th>Date</th>
+        <th>TypeOfGame</th>
+        <th>Tournament</th>
+        <th>LocationOfTournament</th>
+        <th>Year</th>
+        <th>Description</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    </tr>
+  </thead>
+  <tbody>
+    {% if list != None%}
+        {% for competition in list %}
+        <tr>
+            <th>{{competition.Player1.Name}}</th>
+            <th>{{competition.Player2.Name}}</th>
+            <th>{{competition.Winner.Name}}</th>
+            <th>{{competition.Duration}}</th>
+            <th>{{competition.Date}}</th>
+            <th>{{competition.Type}}</th>
+            <th>{{competition.Tournament.Name}}</th>
+            <th>{{competition.Tournament.Location}}</th>
+            <th>{{competition.Tournament.Year}}</th>
+            <th>{{competition.Tournament.Description}}</th>
+            <th><a href="/competitions/{{competition.idCompetition}}"> <button class="ui blue button">Edit</button> </a></th>
+            <th><a href="/competitions/remove/{{competition.idCompetition}}"> <button class="ui red button">Delete</button> </a></th>
+        </tr>
+        {% endfor %}
+    {% endif %}
+  </tbody>
+    <form class="ui form " method="get">
+        <button class="ui green button" type="submit">Refresh</button>
+    </form>
+</table>
+
+
+
+
+</body>
+</html>
