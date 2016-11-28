@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Admin panel</title>
+
+    {% load staticfiles %}
+    <link href="{% static 'semantic/semantic.min.css'%}" rel="stylesheet" type="text/css">
+    <script src="{% static 'semantic/semantic.min.js'%}"></script>
+
+    <style>
+        a{
+            color:inherit
+            }
+        a:hover{
+            color:inherit
+        }
+
+    </style>
+</head>
+<body >
+
+<div class="ui raised very padded text container segment">
+  <h2 class="ui header center aligned "><i class="setting icon"></i> Competitions admin panel page</h2>
+</div>
+
+<div class="ui one column grid">
+
+    {% if message != None %}
+    <div class="row centered">
+        <div class="ui cards">
+            <div class="card">
+                <div class="content">
+                    <div class="header">Done</div>
+                    <div class="meta">Action done </div>
+                    <div class="description">
+                    {{message}}
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    {% endif %}
+
+
+    <div class="row">
+        <div class="ui grid center">
+            <div class="ui five wide column"></div>
+            <div class="ui center aligned segment six wide column">
+                <div class="ui stacked header"><h1>Database</h1></div>
+                <div class="ui stacked horizontal divider">Options</div>
+                    <a href="init/"><button class="ui button red" >Reinitialize</button></a>
+                </div>
+        </div>
+    </div>
+
+       <div class="row">
+        <div class="ui grid center">
+            <div class="ui five wide column"></div>
+            <div class="ui center aligned segment six wide column">
+                <div class="ui stacked header"><h1>Competitions</h1></div>
+                <div class="ui stacked horizontal divider">Options</div>
+                <div class="ui stackable seven columned grid ">
+                <div class="row">
+                    <div class="three wide centered column ">
+                        <a href="add/"><button class="ui  button blue">Add</button></a>
+                    </div>
+                    <div class="one wide column"></div>
+                    <div class="three wide centered column ">
+                        <a href="list/"><button class="ui button blue">Search</button></a>
+                    </div>
+
+                </div>
+                    <div class="three wide centered column ">
+                        <a href="aggregate/"><button class="ui button yellow">Aggregate and map/reduce</button></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+</body>
+</html>

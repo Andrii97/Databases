@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Add new Competition</title>
+
+      {% load staticfiles %}
+    <link href="{% static 'semantic/semantic.min.css'%}" rel="stylesheet" type="text/css">
+    <script src="{% static 'semantic/semantic.min.js'%}"></script>
+
+    <style>
+        a{
+            color:inherit
+            }
+        a:hover{
+            color:inherit
+        }
+
+    </style>
+</head>
+<body>
+
+<div class="ui raised very padded text container segment">
+  <h2 class="ui header center aligned "><i class="setting icon"></i> Competition admin panel page</h2>
+</div>
+
+<form action="/competitions/{{competition.idCompetition}}" method="post">
+    <div class="ui container segment">
+
+        <div class="ui one column centered very padded grid">
+            <div class="ui form ">
+                <div class="row">
+                    <div class="ui fields">
+                        <div class="field">
+                            <label>Player1</label>
+                            <select  class="ui dropdown" name="idPlayer1">
+                                {% for player in player1 %}
+                              <option value="{{player.idPlayer}}" {% if competition.Player1.idPlayer == player.idPlayer %} selected="selected" {%endif%}>{{player.Name}} Date:{{player.DateOfBirth}}</option>
+                                {% endfor %}
+                            </select>
+                          </div>
+                        <div class="field">
+                            <label>Player2</label>
+                            <select  class="ui dropdown" name="idPlayer2">
+                                {% for player in player2 %}
+                              <option value="{{player.idPlayer}}" {% if competition.Player2.idPlayer == player.idPlayer %} selected="selected" {%endif%}>{{player.Name}} Date:{{player.DateOfBirth}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                        <div class="field">
+                            <label>PlayerWin</label>
+                            <select  class="ui dropdown" name="idPlayerWin">
+                                {% for player in playerWin %}
+                              <option value="{{player.idPlayer}}" {% if competition.Winner.idPlayer == player.idPlayer %} selected="selected" {%endif%}>{{player.Name}} Date:{{player.DateOfBirth}}</option>
+                                {% endfor %}
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+        <div class="ui one column centered very padded grid">
+            <div class="ui form ">
+                <div class="row">
+                    <div class="ui fields">
+                        <div class="field">
+                            <label>Tournament</label>
+                            <select  class="ui dropdown" name="idTournament">
+                                {% for t in tournaments %}
+                              <option value="{{t.idTournament}}" {% if competition.Tournament.idTournament == t.idTournament %} selected="selected" {%endif%}>{{t.Name}}</option>
+                                {% endfor %}
+                            </select>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+        <div class="ui one column centered very padded grid">
+            <div class="ui form ">
+                <div class="row">
+                    <div class="ui fields">
+                        <div class="field">
+                            <label>typesOfGame</label>
+                            <select  class="ui dropdown" name="idTypeOfGame">
+                                {% for type in typesOfGame %}
+                              <option value="{{type.idTypeOfGame}}" {% if competition.Type == type.Type %} selected="selected" {%endif%}>{{type.Type}}</option>
+                                {% endfor %}
+                            </select>
+                          </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <br>
+
+
+        <div class="ui one column centered very padded grid">
+            <div class="ui form ">
+                <div class="row">
+                    <div class="ui fields">
+                        <div class="field">
+                            <label>duration of competition</label>
+                            <input type="numbers" placeholder="duration" name="duration" value="{{competition.Duration}}">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <br>
+        <div class="ui one column centered very padded grid">
+            <div class="ui form ">
+                <div class="row">
+                   <button type="submit" class="ui button blue">Edit competition</button>
+                </div>
+            </div>
+        </div>
+
+
+    </div>
+
+    {% csrf_token %}
+
+
+    </div>
+
+</form>
+
+
+
+
+
+</body>
+</html>
