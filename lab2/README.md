@@ -11,6 +11,7 @@ Author: Andrii Severin
 4.Реалізувати обчислення та виведення результату складного агрегативного запиту до бази даних з використанням функції aggregate() сервера MongoDB.
 
 Тексти функції Map/Reduce та aggregate():
+
     def count_of_winPlayer(self):
         map = Code("""
     				   function(){
